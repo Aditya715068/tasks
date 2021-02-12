@@ -1,0 +1,183 @@
+Do the below programs in anonymous function and IIFE
+
+
+Q1: Print odd numbers in an array
+
+
+let arr=[2,3,4,5,6,7,8,9];
+
+(function(arr){
+    for(let i=0;i<=arr.length;i++)
+    {
+    if(arr[i]%2!==0)
+    {
+        console.log(i);
+    }
+    }
+})
+(arr);
+
+
+
+
+
+Q2: Convert all the strings to title caps in a string array.
+
+
+
+ let str=userInput[0];
+   
+   titleCase(str);
+   
+   function titleCase(string) {
+      var sentence = string.toLowerCase().split(" ");
+      for(var i = 0; i< sentence.length; i++){
+         sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+      }
+   console.log(sentence.join(" "));
+   return sentence;
+   }
+   
+   
+
+
+
+
+
+
+
+
+Q3: Sum of all numbers in an array.
+
+
+
+  let arr=[2,3,4,5,6,7,8,9];
+   
+
+var sum = arr.reduce(function(a, b){
+        return a + b;
+    }, 0);
+    
+    
+   console.log(sum);
+   
+
+
+
+
+
+
+Q4: Return all the prime numbers in an array.
+
+
+
+ let numArray=[2,3,4,5,6,7,8,9];
+
+numArray = numArray.filter((number) => {
+  for (var i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
+});
+
+console.log(numArray);
+   
+
+
+
+
+
+
+Q5: Return all the palindromes in an array.
+
+
+const arr = [1, 5, 7, 4, 15, 4, 7, 5, 1];
+const isPalindrome = arr => {
+   const { length: l } = arr;
+   const mid = Math.floor(l / 2);
+   for(let i = 0; i <= mid; i++){
+      if(arr[i] !== arr[l-i-1]){
+         return false;
+      }
+   }
+   return true;
+};
+console.log(isPalindrome(arr));  
+
+
+
+
+
+
+
+
+Q6: Return median of two sorted arrays of same size.
+
+
+const mid = arr => {
+      let middle = Math.floor(arr.length / 2);
+      arr = [...arr].sort((a, b) => a - b);
+      if (arr.length % 2 !== 0) {
+         resEle.innerHTML = "Median = " + arr[middle];
+      } else {
+         resEle.innerHTML = "Median = " + (arr[middle - 1] + arr[middle]) / 2;
+      }
+   }
+
+
+
+
+
+
+
+Q7: Remove duplicates from an array.
+
+ 
+
+const array = [1, 2, 3, 2, 3];
+
+get(array);
+  
+  
+function get(arr){
+    
+    let uniqueArr = [];
+    for(let i of arr) {
+        if(uniqueArr.indexOf(i) === -1) {
+            uniqueArr.push(i);
+        }
+    }
+    console.log(uniqueArr);
+}
+
+
+
+
+
+
+
+
+
+Q8: Rotate an array by k times and return the rotated array.
+
+
+
+var rotate=funtion(num, k){
+let i=0;
+ while(i<k){
+num.unshift(nums.pop())
+i++;
+ }
+return nums;
+};
+
+
+
+
+
+
+
+
+
+
+

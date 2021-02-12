@@ -1,0 +1,128 @@
+task 2
+
+
+
+Q1: html and script.js file and run a for loop on the data and print all the country names in the console.
+
+var request =  new XMLHttpRequest();
+
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+
+request.send();
+
+request.onload=function(){
+
+    var data=JSON.parse(this.response);
+
+for(let i in data)
+{
+    console.log(data[i].flag)
+
+    if(data[i].region=='Asia')
+    {
+        console.log(data[i].name)
+    }
+}    
+    
+}
+
+
+
+
+
+
+Q2: Write a write up on Difference between copy by value and copy by reference. 
+
+Call by value
+   In call by value method, the value of the actual parameters is copied into the formal parameters. In    other words, we can say that the value of the variable is used in the function call in the call by value     method.
+   In call by value method, we can not modify the value of the actual parameter by the formal parameter.
+   In call by value, different memory is allocated for actual and formal parameters since the value of the    actual parameter is copied into the formal parameter.
+   The actual parameter is the argument which is used in the function call whereas formal parameter is the    argument which is used in the function definition.
+
+Call by reference
+   In call by reference, the address of the variable is passed into the function call as the actual    parameter.
+   The value of the actual parameters can be modified by changing the formal parameters since the address of    the actual parameters is passed.
+   In call by reference, the memory allocation is similar for both formal parameters and actual parameters.    All the operations in the function are performed on the value stored at the address of the actual    parameters, and the modified value gets stored at the same address.
+
+
+
+
+
+
+Q3: How to copy by value a composite data type (array+objects). 
+
+
+
+var Account =[{
+   let account_number;
+   let first_name;
+   let last_name;
+   let balance;
+},
+Vector= {
+  let x;
+  let y;
+  let z;
+}, Color ={
+  let red;
+  let green;
+  let blue;
+},
+ Vertex = {
+  let position;
+  let color;
+}];
+
+v.position.x = 0.0;
+v.position.y = 1.5;
+v.position.z = 0.0;
+v.color.red = 128;
+v.color.green = 0;
+v.color.blue = 255;
+
+
+
+
+
+
+
+
+
+Q5: Try the rest countries api. Extract and print the total population of all the countries in the console. use the html template. https://restcountries.eu/rest/v2/all 
+
+
+var request =  new XMLHttpRequest();
+
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+
+request.send();
+
+request.onload=function(){
+
+    var data=JSON.parse(this.response);
+
+
+let totalPop = data.reduce(function (accumulator, item) {
+    return accumulator + item.population;
+  }, 0);
+  console.log(totalPop);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
